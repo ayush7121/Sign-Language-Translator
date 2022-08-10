@@ -1,0 +1,141 @@
+#include <LiquidCrystal.h> 
+int flexPin0 = A0;               
+int flexPin1 = A1;  
+int flexPin2 = A2;  
+int flexPin3 = A3;  
+int flexPin4 = A4;  
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+void setup() 
+{ 
+
+   pinMode(flexPin0, INPUT);
+   pinMode(flexPin1, INPUT);
+   pinMode(flexPin2, INPUT);
+   pinMode(flexPin3, INPUT);
+   pinMode(flexPin4, INPUT);
+   lcd.begin(16, 2);
+     Serial.begin(9600);
+} 
+
+void loop() 
+{ 
+  int flexValue0;
+  int flexValue1;
+  int flexValue2;
+  int flexValue3;
+  int flexValue4;
+  flexValue0 = analogRead(flexPin0);
+  flexValue1 = analogRead(flexPin1);
+  flexValue2 = analogRead(flexPin2);
+  flexValue3 = analogRead(flexPin3);
+  flexValue4 = analogRead(flexPin4);
+  /*Serial.print("sensor: ");
+  Serial.println(flexValue0);
+  Serial.println(flexValue1);
+  Serial.println(flexValue2);
+  Serial.println(flexValue3);
+  Serial.println(flexValue4);*/
+//  if((flexValue0>=390 && flexValue0<=399) && (flexValue1>=400 && flexValue1<=410) && (flexValue2>=415 && flexValue2<=424) && (flexValue3>=345 && flexValue3<=355) && (flexValue4>=350 && flexValue4<=360))
+//  {
+  //  Serial.println("");
+  //}
+  if((flexValue0>=480&&flexValue0<=530) && (flexValue1>=370&&flexValue1<=430) && (flexValue2>=400&&flexValue2<=430) && (flexValue3>=330&&flexValue3<=355) && (flexValue4>=370&&flexValue4<=395))
+  {
+    Serial.println("Hello");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Hello");
+  delay(500);
+  }
+  else if((flexValue0>=380 && flexValue0<=395) && (flexValue1>=415 && flexValue1<=470) && (flexValue2>=460 && flexValue2<=480) && (flexValue3>=360 && flexValue3<=385) && (flexValue4>=382 && flexValue4<=415))
+  {
+    Serial.println("Sad");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Sad");
+  delay(500);
+  }
+  else if((flexValue0>=395 && flexValue0<=430) && (flexValue1>=390 && flexValue1<=450) && (flexValue2>=590 && flexValue2<=690) && (flexValue3>=455 && flexValue3<=495) && (flexValue4>=460 && flexValue4<=550))
+  {
+    Serial.println("College");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("College");
+  delay(500);
+  }
+  else if((flexValue0>=470 && flexValue0<=525) && (flexValue1>=600) && (flexValue2>=570) && (flexValue3>=455 && flexValue3<=490) && (flexValue4>=480 && flexValue4<=570))
+  {
+    Serial.println("Yes");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Yes");
+  delay(500);
+  }
+  else if((flexValue0>=400 && flexValue0<=465) && (flexValue1>=395 && flexValue1<=470) && (flexValue2>=400 && flexValue2<=470) && (flexValue3>=420 && flexValue3<=455) && (flexValue4>=430 && flexValue4<=500))
+  {
+    Serial.println("No");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("No");
+  delay(500);
+  }
+  
+  else if((flexValue0>=475 && flexValue0<=535) && (flexValue1>=400 && flexValue1<=440) && (flexValue2>=520 && flexValue2<=595) && (flexValue3>=420 && flexValue3<=480) && (flexValue4>=450 && flexValue4<=540))
+  {
+    Serial.println("I");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("I");
+  delay(500);
+  }
+  else if((flexValue0>=380 && flexValue0<=450) && (flexValue1>=470 && flexValue1<=540) && (flexValue2>=440 && flexValue2<=510) && (flexValue3>=350 && flexValue3<=400) && (flexValue4>=320 && flexValue4<=600))
+  {
+    Serial.println("Bye");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Bye");
+  delay(500);
+  }
+  else if((flexValue0>=410 && flexValue0<=495) && (flexValue1>=390 && flexValue1<=430) && (flexValue2>=400 && flexValue2<=430) && (flexValue3>=320 && flexValue3<=380) && (flexValue4>=490 && flexValue4<=600))
+  {
+    Serial.println("water");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Water");
+  delay(500);
+  }
+  else if(flexValue0<=395&&flexValue1>=550&&flexValue2>=560&&flexValue3>=420&&flexValue4>=350)
+ 
+  {
+
+   Serial.println("Good");
+   lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Good");
+  delay(500);
+  
+  }
+ else if((flexValue0>=470 && flexValue0<=550) && (flexValue1>=390 && flexValue1<=430) && (flexValue2>=390 && flexValue2<=450) && (flexValue3>=410 && flexValue3<=465) && (flexValue4>=410 && flexValue4<=470))
+  {
+    Serial.println("Two");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Two");
+  delay(500);
+  }
+   else if((flexValue0>=480 && flexValue0<=540) && (flexValue1>=510 && flexValue1<=690) && (flexValue2>=510 && flexValue2<=590) && (flexValue3>=390 && flexValue3<=450) && (flexValue4>=370 && flexValue4<=400))
+  {
+    Serial.println("Restroom");
+    lcd.clear();
+  lcd.setCursor(5,1);
+  lcd.print("Restroom");
+  delay(500);
+  }
+  
+  
+  
+  
+  delay(800);
+}
